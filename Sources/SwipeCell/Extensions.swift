@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 public extension View {
     
     func onSwipe(leading: [Slot] = [], trailing: [Slot] = []) -> some View {

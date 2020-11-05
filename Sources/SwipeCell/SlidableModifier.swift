@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 public struct SlidableModifier: AnimatableModifier {
     
     public enum SlideAxis {
@@ -69,6 +70,11 @@ public struct SlidableModifier: AnimatableModifier {
     public init(leading: [Slot], trailing: [Slot]) {
         self.leadingSlots = leading
         self.trailingSlots = trailing
+    }
+    
+    public init(leadingActions: [SwipeActionProtocol], trailingActions: [SwipeActionProtocol]) {
+        self.leadingSlots = leadingActions.map { $0.slot }
+        self.trailingSlots = trailingActions.map { $0.slot }
     }
     
     private func flushState() {

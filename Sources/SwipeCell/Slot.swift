@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 public struct Slot: Identifiable {
     /// Id
     public let id = UUID()
@@ -32,6 +33,7 @@ public struct Slot: Identifiable {
     }
 }
 
+@available(iOS 13.0, *)
 public struct SlotStyle {
     /// Background color of slot.
     public let background: Color
